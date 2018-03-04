@@ -1,0 +1,82 @@
+html {
+     font-weight: 100;
+     font-family: 'Helvetica Neue', Helvetica;
+}
+ html, body, main, section {
+     margin: 0;
+     padding: 0;
+     height: calc(100vh - 60px);
+}
+ button {
+     transition: opacity 1s;
+     font-weight: 100;
+     width: 100%;
+     padding: 10px;
+     border: none;
+     height: 60px;
+     overflow: hidden;
+     font-size: 2em;
+     background-color: black;
+     color: white;
+     cursor: pointer;
+}
+ header {
+     position: absolute;
+     top: 2px;
+     right: 5px;
+}
+ h1 {
+     color: white;
+     font-weight: 200;
+     font-size: 1.5em;
+     padding: 0;
+     margin: 0;
+}
+ h1 span {
+     background-color: white;
+     display: inline-block;
+     padding: 0 4px;
+     margin: 0 4px;
+     border-radius: 4px;
+     color: #d500ff;
+}
+ table.jsoneditor-search div.jsoneditor-frame {
+     display: none;
+}
+ @media (min-width: 480px) {
+     header {
+         left: 50%;
+         transform: translateX(-50%);
+         right: auto;
+    }
+     table.jsoneditor-search div.jsoneditor-frame {
+         display: block;
+    }
+     h1 span {
+         color: #7200ff;
+    }
+}
+ div.jsoneditor-menu {
+     background: linear-gradient(45deg, #00c9ff, #f09);
+     border-bottom: 1px solid transparent;
+}
+ div.jsoneditor {
+     border: none;
+}
+ table.jsoneditor-search div.jsoneditor-frame {
+     background-color: rgba(0,0,0,0.15);
+}
+ table.jsoneditor-search button {
+     mix-blend-mode: color-dodge;
+}
+ .disabled {
+     opacity: 0.0;
+     pointer-events: none;
+}
+ @supports (-webkit-overflow-scrolling: touch) {
+     @media (orientation: portrait) {
+         html, body, main, section {
+             height: calc(100vh - 60px - 75px);
+        }
+    }
+}
