@@ -15,9 +15,13 @@ xhttp.onreadystatechange = function() {
   	  },
   	  editor = new JSONEditor(section, options);
   editor.set(json);
-  var originalJSON = JSON.stringify(editor.get());
+  var originalJSON = JSON.stringify(editor.get()),
+      savedPass = '';
   button.addEventListener('click', function(){
-    var parameters = 'json=' + JSON.stringify(editor.get());
+    var pass = prompt('Password', savedPass);
+    if(pass == null || pass == '') return;
+    savedPass = pass;
+    var parameters = 'json=' + JSON.stringify(editor.get()) + '&pass=' + pass;
     xhttp.onreadystatechange = function() {
       if(!this.doneOK()) return;
       try {
