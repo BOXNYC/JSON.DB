@@ -1,3 +1,43 @@
-<?php $PASSWORD = 'CHANGE ME';
-eval(base64_decode('JFNFUEFSQVRPUiA9ICcjIyBEQVRBQkFTRSAjIyA/Pic7CiRzYXZlID0gaXNzZXQoJF9QT1NUWydqc29uJ10pOwpmdW5jdGlvbiBleGl0TWVzc2FnZSgkc3VjY2VzcywgJG1lc3NhZ2UsICRtZXNzYWdlX2tleT0nbWVzc2FnZScpewogIGhlYWRlcignQ29udGVudC1UeXBlOiBhcHBsaWNhdGlvbi9qc29uJyk7CiAgcHJpbnQgJ3sic3VjY2VzcyI6Jy4oJHN1Y2Nlc3M/J3RydWUnOidmYWxzZScpLicsIicuJG1lc3NhZ2Vfa2V5LiciOicuJG1lc3NhZ2UuJ30nOwogIGV4aXQ7Cn0KaWYoJHNhdmUgJiYgJF9QT1NUWydwYXNzJ10gPT0gJFBBU1NXT1JEKToKICAkbmV3X2pzb24gPSBqc29uX2VuY29kZSgkX1BPU1RbJ2pzb24nXSk7CiAgaWYoJG5ld19qc29uID0ganNvbl9kZWNvZGUoJG5ld19qc29uKSk6CiAgICAkY3VycmVudCA9IGZpbGVfZ2V0X2NvbnRlbnRzKF9fRklMRV9fKTsKICAgICRjdXJyZW50X3BhcnRzID0gZXhwbG9kZSgkU0VQQVJBVE9SLCAkY3VycmVudCk7CiAgICBpZihjb3VudCgkY3VycmVudF9wYXJ0cykgPT0gMyk6CiAgICAgIGZpbGVfcHV0X2NvbnRlbnRzKF9fRklMRV9fLCAkY3VycmVudF9wYXJ0c1swXSAuICRTRVBBUkFUT1IgLiAkY3VycmVudF9wYXJ0c1sxXSAuICRTRVBBUkFUT1IgLiAkX1BPU1RbJ2pzb24nXSk7CiAgICAgIGV4aXRNZXNzYWdlKFRSVUUsICciU2F2ZWQhIicpOwogICAgZW5kaWY7CiAgZWxzZToKICAgIGV4aXRNZXNzYWdlKEZBTFNFLCAnIkpTT04gcGFyc2luZyBlcnJvci4iJyk7CiAgZW5kaWY7CmVsc2VpZigkc2F2ZSAmJiBpc3NldCgkX1BPU1RbJ3Bhc3MnXSkgJiYgJF9QT1NUWydwYXNzJ10gIT0gJFBBU1NXT1JEKToKICBoZWFkZXIoJ0NvbnRlbnQtVHlwZTogYXBwbGljYXRpb24vanNvbicpOwogIHByaW50ICd7InN1Y2Nlc3MiOmZhbHNlLCJtZXNzYWdlIjoiUGFzc3dvcmQgZGlkIG5vdCBtYXRjaC4ifSc7CiAgZXhpdDsKZW5kaWY7CmlmKChpc3NldCgkX0dFVFsnZWRpdCddKSAmJiAoYm9vbCkkX0dFVFsnZWRpdCddID09IFRSVUUpIHx8IChpc3NldCgkX0dFVFsnZWRpdCddKSAmJiAkX0dFVFsnZWRpdCddID09ICcnKSk6CmVjaG8gZmlsZV9nZXRfY29udGVudHMoJ2h0dHBzOi8vY2RuLnJhd2dpdC5jb20vQk9YTllDL0pTT04uREIvbWFzdGVyL2Fzc2V0cy9qc29uLmRiLmh0bScpOyBleGl0OwplbHNlaWYoaXNzZXQoJF9HRVRbJ3F1ZXJ5J10pICYmICFlbXB0eSgkX0dFVFsncXVlcnknXSkpOgokZmlsZSA9ICdodHRwJy4oaXNzZXQoJF9TRVJWRVJbJ0hUVFBTJ10pPydzJzonJykuJzovLycuJF9TRVJWRVJbJ0hUVFBfSE9TVCddLicvJy5wcmVnX3JlcGxhY2UoJy9cPy4qJC8nLCcnLCRfU0VSVkVSWydSRVFVRVNUX1VSSSddKTsKJEpTT04gPSBmaWxlX2dldF9jb250ZW50cygkZmlsZSwgdHJ1ZSk7CiRKU09OID0ganNvbl9kZWNvZGUoJEpTT04sIHRydWUpOwokZGF0YSA9ICRKU09OOwpmb3JlYWNoKGV4cGxvZGUoJy8vJywgJF9HRVRbJ3F1ZXJ5J10pIGFzICRwYXRoKSAkZGF0YSA9ICRkYXRhWyRwYXRoXTsKaWYoJGRhdGEpIGV4aXRNZXNzYWdlKFRSVUUsIGpzb25fZW5jb2RlKCRkYXRhKSwgJ2RhdGEnKTsKZWxzZSBleGl0TWVzc2FnZShGQUxTRSwgJyJRdWVyeSByZXR1cmVkIG51bGwuIicpOwplbHNlOiBoZWFkZXIoJ0NvbnRlbnQtVHlwZTogYXBwbGljYXRpb24vanNvbicpOyBlbmRpZjs='));
+<?php
+$PASSWORD = 'iheartny';
+$SEPARATOR = '## DATABASE ## ?>';
+$QUERY_NOTATION = '//';
+
+
+$save = isset($_POST['json']);
+function exitMessage($success, $message, $message_key='message'){
+  header('Content-Type: application/json');
+  print '{"success":'.($success?'true':'false').',"'.$message_key.'":'.$message.'}';
+  exit;
+}
+if($save && $_POST['pass'] == $PASSWORD):
+  $new_json = json_encode($_POST['json']);
+  if($new_json = json_decode($new_json)):
+    $current = file_get_contents(__FILE__);
+    $current_parts = explode($SEPARATOR, $current);
+    if(count($current_parts) == 3):
+      file_put_contents(__FILE__, $current_parts[0] . $SEPARATOR . $current_parts[1] . $SEPARATOR . $_POST['json']);
+      exitMessage(TRUE, '"Saved!"');
+    endif;
+  else:
+    exitMessage(FALSE, '"JSON parsing error."');
+  endif;
+elseif($save && isset($_POST['pass']) && $_POST['pass'] != $PASSWORD):
+  header('Content-Type: application/json');
+  print '{"success":false,"message":"Password did not match."}';
+  exit;
+endif;
+if((isset($_GET['edit']) && (bool)$_GET['edit'] == TRUE) || (isset($_GET['edit']) && $_GET['edit'] == '')):
+echo file_get_contents('https://cdn.rawgit.com/BOXNYC/JSON.DB/master/assets/json.db.htm'); exit;
+elseif(isset($_GET['query']) && !empty($_GET['query'])):
+$file = 'http'.(isset($_SERVER['HTTPS'])?'s':'').'://'.$_SERVER['HTTP_HOST'].'/'.preg_replace('/\?.*$/','',$_SERVER['REQUEST_URI']);
+$JSON = file_get_contents($file, true);
+$JSON = json_decode($JSON, true);
+$data = $JSON;
+foreach(explode($QUERY_NOTATION, $_GET['query']) as $path) $data = $data[$path];
+if($data) exitMessage(TRUE, json_encode($data), 'data');
+else exitMessage(FALSE, '"Query retured null."');
+else: header('Content-Type: application/json'); endif;
+
+
 ## DATABASE ## ?>{"JSON.DB.PHP":{"version":0.1}}
