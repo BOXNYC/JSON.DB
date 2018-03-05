@@ -1,5 +1,5 @@
 <?php
-$PASSWORD = 'iheartny';
+$PASSWORD = 'CHANGE ME';
 $SEPARATOR = '## DATABASE ## ?>';
 if(isset($_POST['json']) && isset($_POST['pass']) && $_POST['pass'] == $PASSWORD):
   $new_json = json_encode($_POST['json']);
