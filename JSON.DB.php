@@ -14,7 +14,7 @@ if(isset($_POST['json']) && isset($_POST['pass']) && $_POST['pass'] == $PASSWORD
   exit;
 endif;
 if((isset($_GET['edit']) && (bool)$_GET['edit'] == TRUE) || (isset($_GET['edit']) && $_GET['edit'] == '')):
-echo file_get_contents('https://cdn.rawgit.com/BOXNYC/JSON.DB.PHP/master/json.db.php.html5');
+echo file_get_contents('https://cdn.rawgit.com/BOXNYC/JSON.DB.PHP/master/json.db.html');
 exit; else: header('Content-Type: application/json'); endif;
 
 
