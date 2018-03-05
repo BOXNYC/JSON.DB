@@ -1,5 +1,5 @@
 # JSON.DB
-Single php file JSON database and manager
+Single file JSON database and manager
 
 ## JSON.DB.PHP
 ### Useage
