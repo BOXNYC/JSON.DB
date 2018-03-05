@@ -1,5 +1,5 @@
 <?php
-$PASSWORD = 'CHANGE ME';
+$PASSWORD = 'iheartny';
 $SEPARATOR = '## DATABASE ## ?>';
 
 $save = isset($_POST['json']);
@@ -31,10 +31,9 @@ elseif(isset($_GET['query']) && !empty($_GET['query'])):
 $file = 'http'.(isset($_SERVER['HTTPS'])?'s':'').'://'.$_SERVER['HTTP_HOST'].'/'.preg_replace('/\?.*$/','',$_SERVER['REQUEST_URI']);
 $JSON = file_get_contents($file, true);
 $JSON = json_decode($JSON, true);
-$code = explode('//', $_GET['query']);
-$code = '$JSON=$JSON'."['".implode("']['", $code)."'];";
-eval($code);
-if($JSON) exitMessage(TRUE, json_encode($JSON), 'data');
+$data = $JSON;
+foreach(explode('//', $_GET['query']) as $path) $data = $data[$path];
+if($data) exitMessage(TRUE, json_encode($data), 'data');
 else exitMessage(FALSE, '"Query retured null."');
 else: header('Content-Type: application/json'); endif;
 
