@@ -1,6 +1,8 @@
 <?php
-$PASSWORD = 'CHANGE ME';
+$PASSWORD = 'iheartny';
 $SEPARATOR = '## DATABASE ## ?>';
+$QUERY_NOTATION = '//';
+
 
 $save = isset($_POST['json']);
 function exitMessage($success, $message, $message_key='message'){
@@ -32,11 +34,10 @@ $file = 'http'.(isset($_SERVER['HTTPS'])?'s':'').'://'.$_SERVER['HTTP_HOST'].'/'
 $JSON = file_get_contents($file, true);
 $JSON = json_decode($JSON, true);
 $data = $JSON;
-foreach(explode('//', $_GET['query']) as $path) $data = $data[$path];
+foreach(explode($QUERY_NOTATION, $_GET['query']) as $path) $data = $data[$path];
 if($data) exitMessage(TRUE, json_encode($data), 'data');
 else exitMessage(FALSE, '"Query retured null."');
 else: header('Content-Type: application/json'); endif;
-
 
 
 ## DATABASE ## ?>{"JSON.DB.PHP":{"version":0.1}}
