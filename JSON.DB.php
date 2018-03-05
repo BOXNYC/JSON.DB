@@ -1,7 +1,8 @@
 <?php
 $PASSWORD = 'CHANGE ME';
 $SEPARATOR = '## DATABASE ## ?>';
-if(isset($_POST['json']) && isset($_POST['pass']) && $_POST['pass'] == $PASSWORD):
+$save = isset($_POST['json']) && isset($_POST['pass']) && $_POST['pass'] != $PASSWORD;
+if($save && $_POST['pass'] == $PASSWORD):
   $new_json = json_encode($_POST['json']);
   if($new_json = json_decode($new_json)) {
     $current = file_get_contents(__FILE__);
@@ -10,8 +11,11 @@ if(isset($_POST['json']) && isset($_POST['pass']) && $_POST['pass'] == $PASSWORD
       file_put_contents(__FILE__, $current_parts[0] . $SEPARATOR . $current_parts[1] . $SEPARATOR . $_POST['json']);
   }
   header('Content-Type: application/json');
-  print $_POST['json'];
+  print '{"success":true,"message":"Saved!"}';
   exit;
+elseif($save && isset($_POST['pass']) && $_POST['pass'] != $PASSWORD):
+  header('Content-Type: application/json');
+  print '{"success":false,"message":"Password did not match."}';
 endif;
 if((isset($_GET['edit']) && (bool)$_GET['edit'] == TRUE) || (isset($_GET['edit']) && $_GET['edit'] == '')):
 echo file_get_contents('https://cdn.rawgit.com/BOXNYC/JSON.DB.PHP/master/json.db.html');
