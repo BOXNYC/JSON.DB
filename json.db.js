@@ -26,7 +26,8 @@ xhttp.onreadystatechange = function() {
       if(!this.doneOK()) return;
       try {
         var json =  JSON.parse(this.responseText);
-        if(json) alert('Data saved!');
+        if(json && typeof json.message !== 'undefined') alert(json.message);
+        else alert('Oops an error occured.');
       } catch(e) {
         alert('Oops an error occured.');
       }
