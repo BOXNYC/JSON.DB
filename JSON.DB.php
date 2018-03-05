@@ -18,7 +18,7 @@ elseif($save && isset($_POST['pass']) && $_POST['pass'] != $PASSWORD):
   print '{"success":false,"message":"Password did not match."}';
 endif;
 if((isset($_GET['edit']) && (bool)$_GET['edit'] == TRUE) || (isset($_GET['edit']) && $_GET['edit'] == '')):
-echo file_get_contents('https://cdn.rawgit.com/BOXNYC/JSON.DB.PHP/master/json.db.html');
+echo file_get_contents('https://cdn.rawgit.com/BOXNYC/JSON.DB.PHP/master/assets/json.db.htm');
 exit; else: header('Content-Type: application/json'); endif;
 
 
