@@ -1,5 +1,5 @@
 <?php
-$PASSWORD = 'iheartny';
+$PASSWORD = 'CHANGE ME';
 $SEPARATOR = '## DATABASE ## ?>';
 $QUERY_NOTATION = '//';
 
